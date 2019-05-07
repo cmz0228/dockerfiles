@@ -1,7 +1,7 @@
 FROM alpine:3.9
 MAINTAINER FAN VINGA<fanalcest@gmail.com>
 
-ENV H5AI_VERSION=0.29.0 \
+ENV H5AI_VERSION=0.29.2 \
     LD_PRELOAD=/usr/lib/preloadable_libiconv.so
 
 RUN apk --no-cache --virtual run add \
@@ -19,7 +19,7 @@ RUN apk --no-cache --virtual run add \
                                nginx          \
                                ffmpeg         \
                                graphicsmagick&&\
-    apk --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing add gnu-libiconv
+    apk --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community add gnu-libiconv
 
 COPY . /tmp/
 
